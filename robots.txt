@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tiotags1.github.io/tiotags1/sitemap.txt
