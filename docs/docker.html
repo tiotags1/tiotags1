@@ -21,19 +21,33 @@
 </span>
 </div>
 <div id="page_body">
-<h1>Enabling php via fcgi</h1>
+<h1>Run under docker or similar</h1>
 
-<p>you can enable fcgi by enabling the example fcgi config script which should work in 90% cases straight out of the box, if not then you need to change the socket url to something appropriate</p>
+<p>At the time of writing of this guide we don't provide out of the box docker images so you have to make your own. It's of a moderate difficulty but in the end it makes it easier to learn how to customize the final image. So in my opinion it a net possitive when it comes to total effort invested.</p>
 
-<p><code>cd &lt;your config directory&gt;</code></p>
+<h2>make your own docker image</h2>
 
-<p>*your config directory is either /etc/hinsightd/ if installed by package manager or <your sources dir>/workdir if installed from source</p>
+<p>start docker</p>
 
-<p><code>mv config/_10_fcgi.lua config/10_fcgi.lua</code></p>
+<p>create a directory for the image</p>
 
-<p>and restart the server</p>
+<pre><code>mkdir nice_project
+cd nice_project
+</code></pre>
 
-<p>for openrc <code>/etc/init.d/hinsightd reload</code></p>
+<p>write some magic to the Dockerfile</p>
+
+<p><code>nano Dockerfile</code></p>
+
+<pre><code>FROM alpine:edge
+
+RUN apk update &amp;&amp; apk upgrade
+RUN apk add hinsightd
+
+CMD ["hinsightd"]
+</code></pre>
+
+<p>that should create an image that listens on the internal 8080 port, has it's config files at /etc/hinsightd/ and the docroot at /var/www/localhost/htdocs/</p>
 
 </div>
 <div id="page_footer">

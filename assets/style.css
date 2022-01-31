@@ -1,7 +1,12 @@
 
 body {
   background-color: #FCF0D8;
-  font-size: 110%;
+}
+
+@media only screen and (min-width: 700px) {
+  body {
+    font-size: larger;
+  }
 }
 
 #page_body {
@@ -26,6 +31,10 @@ h1 {
 
 h1 a {
   color: #630A10;
+}
+
+a img {
+  height: 1em;
 }
 
 #page_header {
@@ -117,7 +126,7 @@ p.error {
 }
 
 .post {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .post p {

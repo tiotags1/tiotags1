@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>blog</title>
+<description></description>
+<link>https://tiotags1.github.io/tiotags1/blog/</link>
+<copyright>2022 All rights reserved</copyright>
+<lastBuildDate>Mon, 31 Jan 2022 09:53:27 +0000</lastBuildDate>
+<pubDate>Mon, 31 Jan 2022 09:53:27 +0000</pubDate>
+<ttl>1800</ttl>
+
+<item>
+<title>better-writing</title>
+<description>The best way to become better at something is to fail at it 10000 times" - some smart man...</description>
+<link>https://tiotags1.github.io/tiotags1/blog/better-writing.html</link>
+<guid isPermaLink="false">https://tiotags1.github.io/tiotags1/blog/better-writing.html</guid>
+<pubDate>Mon, 31 Jan 2022 08:44:00 +0000</pubDate>
+</item>
+<item>
+<title>first</title>
+<description>Site says Hello world!</description>
+<link>https://tiotags1.github.io/tiotags1/blog/first.html</link>
+<guid isPermaLink="false">https://tiotags1.github.io/tiotags1/blog/first.html</guid>
+<pubDate>Fri, 28 Jan 2022 20:19:05 +0000</pubDate>
+</item>
+
+
+</channel>
+</rss>
