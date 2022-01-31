@@ -197,7 +197,6 @@ p.error {
   to {transform:scale(1)}
 }
 
-/* The Close Button */
 #modal-close {
   position: absolute;
   top: 15px;
@@ -237,7 +236,6 @@ p.error {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 #modal-next {
   right: 0;
   border-radius: 3px 0 0 3px;

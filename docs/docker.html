@@ -21,6 +21,8 @@
 </span>
 </div>
 <div id="page_body">
+<h1><a href=".">docs</a></h1>
+
 <h1>Run under docker or similar</h1>
 
 <p>At the time of writing of this guide we don't provide out of the box docker images so you have to make your own. It's of a moderate difficulty but in the end it makes it easier to learn how to customize the final image. So in my opinion it a net possitive when it comes to total effort invested.</p>
@@ -48,6 +50,23 @@ CMD ["hinsightd"]
 </code></pre>
 
 <p>that should create an image that listens on the internal 8080 port, has it's config files at /etc/hinsightd/ and the docroot at /var/www/localhost/htdocs/</p>
+
+
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+  this.page.title = 'docker - docs';
+  this.page.url = 'https://tiotags1.github.io/tiotags1/docs/docker.html';
+  this.page.identifier = 'docs/docker';
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://tiotags.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
 <div id="page_footer">
