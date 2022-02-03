@@ -19,6 +19,8 @@
 <a href="../help.html">Help</a>
 <a href="../about.html">About</a>
 </span>
+<div id="page_toggles">
+</div>
 </div>
 <div id="page_body">
 <h1><a href=".">docs</a></h1>
@@ -49,7 +51,13 @@ RUN apk add hinsightd
 CMD ["hinsightd"]
 </code></pre>
 
-<p>that should create an image that listens on the internal 8080 port, has it's config files at /etc/hinsightd/ and the docroot at /var/www/localhost/htdocs/</p>
+<p>and build and start the container</p>
+
+<pre><code>sudo docker build -t nice_project .
+sudo docker run nice_project -p 80:8080 --rm -it nice_project
+</code></pre>
+
+<p>that should create an image that listens on the internal 8080 port, has it's config files at /etc/hinsightd/ and the docroot for the default vhost at /var/www/localhost/htdocs/</p>
 
 
 <div id="disqus_thread"></div>
@@ -67,7 +75,6 @@ var disqus_config = function () {
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 </div>
 <div id="page_footer">
 <div id="page_socials">

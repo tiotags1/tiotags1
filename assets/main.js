@@ -1,4 +1,5 @@
 
+// modal part of lightbox library at https://tiotags1.github.io/tiotags1/assets/main.js
 function load_modal_caption (parent) {
   let c = parent.children;
   for (let i = 0; i < c.length; i++) {
@@ -8,7 +9,6 @@ function load_modal_caption (parent) {
   return null;
 }
 
-// modal
 function load_modal_image (image) {
   let href = image.href;
   image.href = "javascript:void(0)";
@@ -132,8 +132,64 @@ function check_modal () {
   document.body.appendChild (modal);
   return modal;
 }
+// end modal
+
+// dark mode toggle from https://tiotags1.github.io/tiotags1/assets/main.js
+function start_toggle_button () {
+  let dark_theme = false;
+  let str = localStorage.getItem ("dark-theme");
+  if (str === 'true') {
+    dark_theme = true;
+  } else if (str === 'false') {
+    dark_theme = false;
+  } else {
+    dark_theme = window.matchMedia ("(prefers-color-scheme: dark)").matches;
+  }
+
+  let button = null;
+
+  do_toggle = function () {
+    if (dark_theme) {
+      document.body.classList.add ("dark");
+      button.innerText = "Light";
+    } else {
+      document.body.classList.remove ("dark");
+      button.innerText = "Dark";
+    }
+    localStorage.setItem ("dark-theme", dark_theme);
+  }
+
+  let container = document.getElementById ("page_toggles");
+
+  button = document.createElement ("a");
+  button.onclick = function (event) {
+    event.preventDefault ();
+    dark_theme = !dark_theme;
+    do_toggle ();
+  };
+  button.href = "#";
+  button.innerText = "Dark";
+  container.appendChild (button);
+
+  container.appendChild (document.createTextNode (" "));
+
+  let button1 = document.createElement ("a");
+  button1.onclick = function (event) {
+    event.preventDefault ();
+    dark_theme = window.matchMedia ("(prefers-color-scheme: dark)").matches;
+    localStorage.removeItem ("dark-theme");
+    do_toggle ();
+  };
+  button1.href = "#";
+  button1.innerText = "Default";
+  container.appendChild (button1);
+
+  do_toggle ();
+}
+// end dark mode
 
 window.onload = function () {
   load_modal ();
+  start_toggle_button ();
 }
 

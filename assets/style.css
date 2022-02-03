@@ -1,36 +1,41 @@
 
-body {
-  background-color: #FCF0D8;
-}
+/* main css */
 
-@media only screen and (min-width: 700px) {
-  body {
-    font-size: larger;
-  }
+body {
+  text-size-adjust: none;
+  font-size: calc(12pt + 2vw);
 }
 
 #page_body {
-  margin: 0.5em;
-  margin-left: 4em;
-  margin-right: 3em;
+  margin: 0.5em 1.5em 0.5em 2.5em;
   padding: 0.5em;
 }
 
-form {
-  background-color: #911F27;
-  padding: 0.5em;
-  padding-bottom: 1.5em;
+@media	only screen and (min-resolution: 200dpi) {
+  #page_body {
+    margin: 0em 0.5em 0em 1em;
+  }
+  body {
+    font-size: calc(12pt + 4vw);
+  }
+}
+
+@media	only screen and (min-resolution: 300dpi) {
+  body {
+    font-size: calc(12pt + 5vw);
+  }
+}
+
+@media	only screen and (min-resolution: 400dpi) {
+  body {
+    font-size: calc(12pt + 6vw);
+  }
 }
 
 h1 {
-  color: #630A10;
   margin-left: 0.2em;
   margin: 0.1em;
   padding: 0.1em;
-}
-
-h1 a {
-  color: #630A10;
 }
 
 a img {
@@ -41,7 +46,6 @@ a img {
   text-align: right;
   padding: 0.3em;
   padding-right: 0.5em;
-  background-color: #FACE7F;
 }
 
 #page_footer {
@@ -59,70 +63,16 @@ a img {
   text-align: right;
 }
 
-fieldset {
-  background-color: #f1f1f1;
-  border: none;
-  border-radius: 2px;
-  margin-bottom: 12px;
-  overflow: hidden;
-  padding: 0 .625em;
-}
-
-label {
-  cursor: pointer;
-  display: inline-block;
-  padding: 3px 6px;
+#page_toggles {
+  margin-top: 0.4em;
   text-align: right;
-  width: 150px;
-  vertical-align: top;
-}
-
-input {
-  font-size: inherit;
-}
-
-p.error {
-  background-color: #911F27;
-  color: #FACE7F;
-  padding: 0.3em;
+  font-size: 50%;
 }
 
 .subtle {
-  color: #777777;
   font-size: 80%;
   padding: 1px;
   margin: 1px;
-  /*text-align: right;*/
-}
-
-.subtle a:link, a:visited, a:hover {
-  color: #aa9999;
-}
-
-.comments {
-  margin-left: 2em;
-  font-size: 80%;
-}
-
-.reply_to {
-  margin-left: -2em;
-  font-size: 80%;
-}
-
-.post .content img {
-  width: auto;
-  height: auto;
-  max-width: 8em;
-  max-height: 8em;
-  border: 1px;
-}
-
-.thumbs img {
-  max-width: 3em;
-  max-height: 3em;
-  width: auto;
-  height: auto;
-  border: 1px;
 }
 
 .post {
@@ -134,9 +84,8 @@ p.error {
   margin-bottom: 0.5em;
 }
 
-/* modal stuff */
+/* modal lightbox library at https://tiotags1.github.io/tiotags1/assets/style.css */
 
-/* Style the Image Used to Trigger the Modal */
 .popupimg {
   border-radius: 5px;
   cursor: pointer;
@@ -149,22 +98,20 @@ p.error {
 
 .popupimg:hover {opacity: 0.7;}
 
-/* The Modal (background) */
 #modal-base {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 50px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
 }
 
-/* Modal Content (Image) */
 #modal-image, #modal-video {
   margin: auto;
   display: block;
@@ -174,7 +121,6 @@ p.error {
   max-height: 80%;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
 #modal-caption {
   margin: auto;
   display: block;
@@ -186,7 +132,6 @@ p.error {
   height: 150px;
 }
 
-/* Add Animation - Zoom in the Modal */
 #modal-image, #modal-video, #modal-caption {
   animation-name: zoom;
   animation-duration: 0.6s;
@@ -214,7 +159,6 @@ p.error {
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   #modal-image, #modal-video {
     width: 100%;
@@ -241,7 +185,6 @@ p.error {
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 #modal-prev:hover, #modal-next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -251,14 +194,83 @@ code {
   display: block;
   font-family: monospace;
   line-height: 100%;
-  background-color: rgb(2,2,2);
-  background-color: rgba(2,2,2,0.8);
-  color: #eee;
+  color: #ddd;
   padding: 0.3em;
   margin: 0.3em;
   letter-spacing: -0.02em;
   word-break: normal;
   border-radius: 5px;
+  overflow: auto;
+  background-color: rgb(2,2,2);
+  background-color: rgba(2,2,2,0.8);
 }
 
+/* normal theme */
+body {
+  background-color: #FCF0DF;
+  color: #222;
+}
+
+a:link,
+a:visited {
+  color: #0A1063;
+}
+
+a:hover {
+  color: #10630A;
+}
+
+h1,
+h1 a:link,
+h1 a:visited,
+a:active {
+  color: #630A10;
+}
+
+#page_header {
+  background-color: #FACE7F;
+}
+
+.subtle,
+.subtle a:link,
+.subtle a:visited {
+  color: #baa;
+}
+
+/* dark theme */
+:root {
+  color-scheme: light dark; /* both supported */
+}
+
+body.dark {
+  color: #FFCCD2;
+  background-color: #362222;
+}
+body.dark #page_header {
+  background-color: #492939;
+}
+body.dark a:link,
+body.dark a:visited {
+  color: #a95858;
+}
+body.dark a:hover {
+  color: #6161c8;
+}
+
+body.dark .subtle,
+body.dark .subtle a:link,
+body.dark .subtle a:visited,
+body.dark .subtle a:hover {
+  color: #544;
+}
+body.dark h1,
+body.dark h1 a:link,
+body.dark h1 a:visited,
+body.dark a:active {
+  color: #B3541E;
+}
+body.dark img {
+  filter: brightness(.8) contrast(1.2);
+}
+/* end dark theme */
 
