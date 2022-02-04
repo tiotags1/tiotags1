@@ -3,7 +3,7 @@
 
 body {
   text-size-adjust: none;
-  font-size: calc(12pt + 2vw);
+  font-size: calc(14pt + 1vw);
 }
 
 #page_body {
@@ -11,24 +11,30 @@ body {
   padding: 0.5em;
 }
 
-@media	only screen and (min-resolution: 200dpi) {
+@media only screen and (min-resolution: 200dpi), (min-width: 900px) {
+  body {
+    font-size: calc(14pt + 2vw);
+  }
+}
+
+@media only screen and (min-resolution: 200dpi) and (min-width: 900px) {
   #page_body {
     margin: 0em 0.5em 0em 1em;
   }
   body {
-    font-size: calc(12pt + 4vw);
+    font-size: calc(14pt + 4vw);
   }
 }
 
-@media	only screen and (min-resolution: 300dpi) {
+@media only screen and (min-resolution: 300dpi) and (min-width: 900px) {
   body {
-    font-size: calc(12pt + 5vw);
+    font-size: calc(14pt + 5vw);
   }
 }
 
-@media	only screen and (min-resolution: 400dpi) {
+@media only screen and (min-resolution: 400dpi) and (min-width: 900px) {
   body {
-    font-size: calc(12pt + 6vw);
+    font-size: calc(14pt + 6vw);
   }
 }
 
@@ -242,12 +248,23 @@ a:active {
   color-scheme: light dark; /* both supported */
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #FFCCD2;
+    background-color: #362222;
+  }
+}
+
 body.dark {
   color: #FFCCD2;
   background-color: #362222;
 }
 body.dark #page_header {
-  background-color: #492939;
+  background-color: #362222;
+  border-bottom: 2px dashed #999;
+}
+body.dark .icon {
+  -webkit-filter: invert(80%);
 }
 body.dark a:link,
 body.dark a:visited {

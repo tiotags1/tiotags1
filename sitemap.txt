@@ -10,3 +10,4 @@ https://tiotags1.github.io/tiotags1/blog/first.html
 https://tiotags1.github.io/tiotags1/blog/better-writing.html
 https://tiotags1.github.io/tiotags1/blog/index.html
 https://tiotags1.github.io/tiotags1/blog/feed.rss
+https://tiotags1.github.io/tiotags1/blog/archive.html

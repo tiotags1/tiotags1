@@ -188,8 +188,8 @@ function start_toggle_button () {
 }
 // end dark mode
 
-window.onload = function () {
+document.addEventListener ("DOMContentLoaded", function (event) {
   load_modal ();
   start_toggle_button ();
-}
+});
 
