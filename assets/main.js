@@ -188,8 +188,81 @@ function start_toggle_button () {
 }
 // end dark mode
 
+// time script from https://tiotags1.github.io/tiotags1/assets/main.js
+// time_ago function inspired by https://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site
+function time_ago (time, only_standard = false) {
+  switch (typeof time) {
+  case 'number':
+  break;
+  case 'string':
+    time = +new Date(time);
+  break;
+  case 'object':
+    if (time.constructor === Date) time = time.getTime();
+  break;
+  default:
+    time = +new Date();
+  }
+  var time_formats = [
+    [0, 'a few seconds ago', 'any second now'], // 60
+    [60, 'a minute ago', 'one more minute'], // 60
+    [120, 'minutes', 60, true], // 60*2, 60
+    [3600, '1 hour ago', '1 hour from now'], // 60*60
+    [7200, 'hours', 3600, true], // 60*60*2, 60*60
+    [86400, 'Yesterday', 'Tomorrow'], // 60*60*24
+    [172800, 'days', 86400, true], // 60*60*24*2, 60*60*24
+    [604800, 'Last week', 'Next week'], // 60*60*24*7
+    [1209600, 'weeks', 604800], // 60*60*24*7*2, 60*60*24*7
+    [2592000, 'Last month', 'Next month'], // 60*60*24*30
+    [5184000, 'months', 2592000, true], // 60*60*24*30*2, 60*60*24*30
+    [31536000, 'Last year', 'Next year'], // 60*60*24*365
+    [63072000, 'years', 31536000], // 60*60*24*365*2, 60*60*24*365
+  ];
+  var seconds = (+new Date() - time) / 1000;
+  var token = 'ago';
+  var list_choice = 1;
+
+  if (seconds < 0) {
+    seconds = -seconds;
+    token = 'from now';
+    list_choice = 2;
+  }
+  for (var i = time_formats.length-1; i >= 0; i--) {
+    var format = time_formats [i];
+    if (seconds < format[0]) { continue; }
+    if ((only_standard == true) && (format[3] !== true)) { continue; }
+    if ((typeof format[2]) == 'string') {
+      return format [list_choice];
+    }
+    var nr = Math.floor (seconds / format[2]);
+    if (only_standard == false) {
+      var diff = (seconds - (nr * format[2]));
+      var subtime = time_ago (+new Date() - diff * 1000, true);
+      if (subtime) {
+        return nr + ' ' + format[1] + ', ' + subtime + ' ' + token;
+      } else {
+        return nr + ' ' + format[1] + ' ' + token;
+      }
+    } else {
+      return nr + ' ' + format[1];
+    }
+  }
+  return null;
+}
+
+function update_auto_date () {
+  var list1 = document.getElementsByClassName("auto_date");
+  for (var i = 0; i < list1.length; i++) {
+    let date = list1[i];
+    date.innerText = time_ago (date.title);
+  };
+}
+// end time script
+
 document.addEventListener ("DOMContentLoaded", function (event) {
   load_modal ();
   start_toggle_button ();
+  update_auto_date ();
+  setInterval (update_auto_date, 60000);
 });
 

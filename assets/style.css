@@ -3,6 +3,7 @@
 
 body {
   text-size-adjust: none;
+  font-size: 14pt;
   font-size: calc(14pt + 1vw);
 }
 
@@ -13,7 +14,7 @@ body {
 
 @media only screen and (min-resolution: 200dpi), (min-width: 900px) {
   body {
-    font-size: calc(14pt + 2vw);
+    font-size: calc(14pt + 1.5vw);
   }
 }
 
@@ -23,18 +24,6 @@ body {
   }
   body {
     font-size: calc(14pt + 4vw);
-  }
-}
-
-@media only screen and (min-resolution: 300dpi) and (min-width: 900px) {
-  body {
-    font-size: calc(14pt + 5vw);
-  }
-}
-
-@media only screen and (min-resolution: 400dpi) and (min-width: 900px) {
-  body {
-    font-size: calc(14pt + 6vw);
   }
 }
 
