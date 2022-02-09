@@ -1,0 +1,24 @@
+
+
+.func {
+  padding: 0.4em;
+  padding-left: 1.2em;
+  margin-bottom: 0.4em;
+  background-color: rgba(1,1,1, 0.2);
+}
+.func h5,
+.func h6 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 100%;
+}
+.func ol {
+  padding: 0px;
+  margin: 0px;
+}
+.func p {
+  padding: 0px;
+  margin: 0px;
+}
+
+

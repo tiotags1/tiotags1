@@ -5,6 +5,7 @@ https://tiotags1.github.io/tiotags1/about.html
 https://tiotags1.github.io/tiotags1/docs/Install.html
 https://tiotags1.github.io/tiotags1/docs/fcgi.html
 https://tiotags1.github.io/tiotags1/docs/docker.html
+https://tiotags1.github.io/tiotags1/docs/reference.html
 https://tiotags1.github.io/tiotags1/docs/index.html
 https://tiotags1.github.io/tiotags1/blog/first.html
 https://tiotags1.github.io/tiotags1/blog/better-writing.html

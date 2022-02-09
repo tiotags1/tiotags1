@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hinsightd web server</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/docs.css">
+<script src="../assets/main.js"></script>
+</head>
+<body>
+<div id="page_header">
+<span id="page_home">
+<a href="https://tiotags1.github.io/tiotags1/"><img class="icon" alt="home" src="../assets/i/home.svg" /></a>
+</span>
+<span id="page_user">
+<a href="../index.html">Home</a>
+<a href="../download.html">Download</a>
+<a href="../blog/">Blog</a>
+<a href="../docs/">Documentation</a>
+<a href="../help.html">Help</a>
+<a href="../about.html">About</a>
+</span>
+<div id="page_toggles">
+</div>
+</div>
+<div id="page_body">
+<h1><a href=".">docs</a></h1>
+
+<h1>function reference</h1>
+
+<div class="ref">
+<div class="func">
+<h5>add_vhost (vhost-table)</h5>
+
+<div><h6>Input</h6>
+<ol>
+<li>vhost-table - a hashtable that describes the new vhost</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>returns a vhost-object to be used in other functions</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>map (vhost-object, path, mode, callback)</h5>
+<p>adds a map callback, processed in the order they are added</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>vhost-object - a valid vhost</li>
+<li>path - the path to match (end it with * to match everything under it)</li>
+<li>mode - 0 runs the callback before the request is started, 99 runs it after it finishes</li>
+<li>callback - a callback that takes a single request object and returns nil if passthrough or true if it ends the process chain</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>redirect_log (log path, debug mask)</h5>
+
+<div><h6>Input</h6>
+<ol>
+<li>log path - a file path for where to redirect stdout & stderr (optional)</li>
+<li>debug mask - a string that represents a mask for what debug output to show (optional) valid values are "0", "ffffffff"</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>proxy (request-object, uri)</h5>
+<p>proxies a request for uri to client</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+<li>uri is in the form of "http(s)://host(:port)/request"</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>cgi (request-object, executable path, htdocs / root dir, file path)</h5>
+<p>executes cgi program and pipes the output to client</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>fastcgi (request-object, fcgi-group, htdocs / root dir, file path)</h5>
+<p>proxies a fastcgi request to a fpm socket and pipes the output to client</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+<li>a fcgi group object created by the create_fcgi function</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>create_fcgi (uri)</h5>
+<p>createst a fcgi group</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>uri in the form tcp://host(:port)/</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>a fcgi group object</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>respond (request-object, http status code, optional body)</h5>
+<p>returns a raw message to client</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+<h6>Example</h6>
+<pre><code>respond (req, 403, "don't look")</code></pre>
+
+</div>
+<div class="func">
+<h5>remote_address (request-object)</h5>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>ip address</li>
+<li>port number</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>add_header (request-object, name, value)</h5>
+<p>adds header to response</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>shutdown (request-object)</h5>
+<p>closes connection without response</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>set_content_type (request-object, content type string)</h5>
+<p>sets content type returned</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+<li>content type string</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+<h6>Example</h6>
+<pre><code>set_content_type (req, "text/html")</code></pre>
+
+</div>
+<div class="func">
+<h5>create_log (path)</h5>
+<p>it creates a log and returns a function that write to it</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>path to log file</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>write to log function</li>
+</ol>
+</div>
+<h6>Example</h6>
+<pre><code>logfunc = create_log ("log.txt")
+logfunc ("hello")
+</code></pre>
+
+</div>
+<div class="func">
+<h5>nil_log ()</h5>
+<p>create a virtual log that doesn't write anywhere</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>No return</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>parse_path (request-object)</h5>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>returns path, query string, method, http version</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>parse_headers (request-object)</h5>
+<p>returns request headers</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>returns headers as a lua hashtable</li>
+</ol>
+</div>
+
+</div>
+<div class="func">
+<h5>set_path (request-object, path, index_files ... index_file(n+1))</h5>
+<p>looks up the vfs cache and sets (path) as the current file to serve index file(s) is an ordered list of files to look for if path is a directory</p>
+
+<div><h6>Input</h6>
+<ol>
+<li>request-object - a valid request object</li>
+<li>path - path to the file requested relative to htdocs of the vhost</li>
+<li>index_files - a list of index files or a list of tables of index files</li>
+</ol>
+</div>
+
+<div><h6>Output</h6>
+<ol>
+<li>if path points to a file returns: dirname(), basename(), last file extension, path_info (if present) if path points to a directory: directory path, nil, nil, path_info, and location is present only if a redirect would be issued (for more info check server option directory_no_redirect)</li>
+</ol>
+</div>
+<h6>Example</h6>
+<pre><code>expl: /var/www/htdocs/index.php/hey
+dir path: /var/www/htdocs/
+file name: index.php
+ext: php
+path info: /hey
+</code></pre>
+
+</div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+  this.page.title = 'reference - docs';
+  this.page.url = 'https://tiotags1.github.io/tiotags1/docs/reference.html';
+  this.page.identifier = 'docs/reference';
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://tiotags.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<div id="page_footer">
+<span id="socials">
+Other links<br/>
+<a href="https://github.com/tiotags1/"><img class="icon" alt="github" src="../assets/i/github.svg" /></a>
+<a href="https://gitlab.com/tiotags/"><img class="icon" alt="gitlab" src="../assets/i/gitlab.svg" /></a>
+</span>
+<br/>
+Copyright &copy; 2022. All rights reserved.
+</div>
+</body>
+</html>
