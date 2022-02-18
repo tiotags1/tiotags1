@@ -5,20 +5,30 @@
 <description></description>
 <link>https://tiotags1.github.io/tiotags1/blog/</link>
 <copyright>2022 All rights reserved</copyright>
-<lastBuildDate>Wed, 09 Feb 2022 09:31:10 +0000</lastBuildDate>
-<pubDate>Wed, 09 Feb 2022 09:31:10 +0000</pubDate>
+<lastBuildDate>Fri, 18 Feb 2022 15:59:56 +0000</lastBuildDate>
+<pubDate>Fri, 18 Feb 2022 15:59:56 +0000</pubDate>
 <ttl>1800</ttl>
 
 <item>
-<title>better-writing</title>
-<description>"The best way to become better at something is to fail at it 10000 times" - some smart man...</description>
+<title>Better writing</title>
+<description>&lt;blockquote&gt;
+  &lt;p&gt;&#34;The best way to become better at something is to fail at it 10000 times&#34; - some smart man probably.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I&#39;ve been bothered by my procrastination to write even basic things like text messages for a long time. I hate to admit it but sometimes I lose hours composing even emails. Yes I&#39;m that bad at writing.&lt;/p&gt;
+
+&lt;p&gt;I need help, and the most reliable help you can possibly get is yourself. Yes you heard it right I want to get better at it. And to implement what I already said is a good plan (read fist paragraph) I decided I&#39;m going to write here. Expect lots of weird information about writing linux servers and other similar projects.&lt;/p&gt;
+
+&lt;p&gt;Also if anybody has any cheatsheet or 10 quick tips article to master writing fast I&#39;m very interested because the prospect of writing lots (and failing) isn&#39;t very appealing to me.&lt;/p&gt;
+</description>
 <link>https://tiotags1.github.io/tiotags1/blog/better-writing.html</link>
 <guid isPermaLink="false">https://tiotags1.github.io/tiotags1/blog/better-writing.html</guid>
 <pubDate>Wed, 02 Feb 2022 14:45:56 +0000</pubDate>
 </item>
 <item>
-<title>first</title>
-<description>Site says Hello world!</description>
+<title>First</title>
+<description>&lt;p&gt;Site says Hello world!&lt;/p&gt;
+</description>
 <link>https://tiotags1.github.io/tiotags1/blog/first.html</link>
 <guid isPermaLink="false">https://tiotags1.github.io/tiotags1/blog/first.html</guid>
 <pubDate>Fri, 28 Jan 2022 20:19:05 +0000</pubDate>
