@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tiotags1.github.io/tiotags1/sitemap.txt
+Sitemap: https://tiotags1.github.io/tiotags1/sitemap.xml
+Sitemap: https://tiotags1.github.io/tiotags1/blog/feed.rss
