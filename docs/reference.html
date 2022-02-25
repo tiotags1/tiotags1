@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="../assets/docs.css">
 <script src="../assets/main.js"></script>
+<link rel="shortcut icon" href="../assets/i/favicon.ico">
 </head>
 <body>
 <div id="page_header">
@@ -28,8 +29,28 @@
 
 <h1>function reference</h1>
 
+<div class="docsidebar">
+<a href="#add_vhost">add_vhost</a><br/>
+<a href="#map">map</a><br/>
+<a href="#redirect_log">redirect_log</a><br/>
+<a href="#proxy">proxy</a><br/>
+<a href="#cgi">cgi</a><br/>
+<a href="#fastcgi">fastcgi</a><br/>
+<a href="#create_fcgi">create_fcgi</a><br/>
+<a href="#respond">respond</a><br/>
+<a href="#remote_address">remote_address</a><br/>
+<a href="#add_header">add_header</a><br/>
+<a href="#shutdown">shutdown</a><br/>
+<a href="#set_content_type">set_content_type</a><br/>
+<a href="#create_log">create_log</a><br/>
+<a href="#nil_log">nil_log</a><br/>
+<a href="#parse_path">parse_path</a><br/>
+<a href="#parse_headers">parse_headers</a><br/>
+<a href="#set_path">set_path</a><br/>
+</div>
+
 <div class="ref">
-<div class="func">
+<div class="func" id="add_vhost">
 <h5>add_vhost (vhost-table)</h5>
 
 <div><h6>Input</h6>
@@ -45,7 +66,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="map">
 <h5>map (vhost-object, path, mode, callback)</h5>
 <p>adds a map callback, processed in the order they are added</p>
 
@@ -65,7 +86,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="redirect_log">
 <h5>redirect_log (log path, debug mask)</h5>
 
 <div><h6>Input</h6>
@@ -82,7 +103,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="proxy">
 <h5>proxy (request-object, uri)</h5>
 <p>proxies a request for uri to client</p>
 
@@ -100,7 +121,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="cgi">
 <h5>cgi (request-object, executable path, htdocs / root dir, file path)</h5>
 <p>executes cgi program and pipes the output to client</p>
 
@@ -117,7 +138,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="fastcgi">
 <h5>fastcgi (request-object, fcgi-group, htdocs / root dir, file path)</h5>
 <p>proxies a fastcgi request to a fpm socket and pipes the output to client</p>
 
@@ -135,7 +156,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="create_fcgi">
 <h5>create_fcgi (uri)</h5>
 <p>createst a fcgi group</p>
 
@@ -152,7 +173,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="respond">
 <h5>respond (request-object, http status code, optional body)</h5>
 <p>returns a raw message to client</p>
 
@@ -171,7 +192,7 @@
 <pre><code>respond (req, 403, "don't look")</code></pre>
 
 </div>
-<div class="func">
+<div class="func" id="remote_address">
 <h5>remote_address (request-object)</h5>
 
 <div><h6>Input</h6>
@@ -188,7 +209,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="add_header">
 <h5>add_header (request-object, name, value)</h5>
 <p>adds header to response</p>
 
@@ -205,9 +226,9 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="shutdown">
 <h5>shutdown (request-object)</h5>
-<p>closes connection without response</p>
+<p>close http connection without any response</p>
 
 <div><h6>Input</h6>
 <ol>
@@ -222,7 +243,7 @@
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="set_content_type">
 <h5>set_content_type (request-object, content type string)</h5>
 <p>sets content type returned</p>
 
@@ -242,7 +263,7 @@
 <pre><code>set_content_type (req, "text/html")</code></pre>
 
 </div>
-<div class="func">
+<div class="func" id="create_log">
 <h5>create_log (path)</h5>
 <p>it creates a log and returns a function that write to it</p>
 
@@ -263,7 +284,7 @@ logfunc ("hello")
 </code></pre>
 
 </div>
-<div class="func">
+<div class="func" id="nil_log">
 <h5>nil_log ()</h5>
 <p>create a virtual log that doesn't write anywhere</p>
 
@@ -280,7 +301,7 @@ logfunc ("hello")
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="parse_path">
 <h5>parse_path (request-object)</h5>
 
 <div><h6>Input</h6>
@@ -296,7 +317,7 @@ logfunc ("hello")
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="parse_headers">
 <h5>parse_headers (request-object)</h5>
 <p>returns request headers</p>
 
@@ -313,7 +334,7 @@ logfunc ("hello")
 </div>
 
 </div>
-<div class="func">
+<div class="func" id="set_path">
 <h5>set_path (request-object, path, index_files ... index_file(n+1))</h5>
 <p>looks up the vfs cache and sets (path) as the current file to serve index file(s) is an ordered list of files to look for if path is a directory</p>
 

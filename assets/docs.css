@@ -21,4 +21,20 @@
   margin: 0px;
 }
 
+.ref {
+  padding-right: 14vw;
+}
+
+.docsidebar {
+  float: right;
+  border: 1px solid grey;
+  position: fixed;
+  right: 0px;
+  top: 17vh;
+  height: 80vh;
+  width: 18vw;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 
