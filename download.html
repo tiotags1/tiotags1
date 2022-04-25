@@ -26,18 +26,22 @@
 <div id="page_body">
 <h1>Download</h1>
 
+<h2>Binaries / Prepackaged</h2>
+
+<ul>
+<li>alpine: enable testing and install with <code>apk add hinsightd</code></li>
+<li>gentoo: either enable guru repo and install from there or copy the guru ebuilds into a localrepo</li>
+<li>windows: this software requires linux APIs to work therefore it cannot be ported to windows or mac at this time. (it does work on android if you have a very recent phone)</li>
+</ul>
+
 <h2>Source Code</h2>
 
 <ul>
 <li><p>download <a href="https://github.com/tiotags1/hin9/archive/refs/heads/master.zip">development latest</a></p></li>
-<li><p>download <a href="https://github.com/tiotags1/hin9/archive/refs/tags/0.9.13.zip">current stable (v0.9.13)</a></p></li>
-<li><p>or git clone <a href="https://github.com/tiotags1/hin9.git">the git repo</a></p></li>
-</ul>
-
-<h2>Prepackaged</h2>
-
-<ul>
-<li>alpine: enable testing and install with <code>apk add hinsightd</code></li>
+<li><p>download <a href="https://github.com/tiotags1/hin9/archive/refs/tags/v0.9.14.zip">current stable (v0.9.14)</a></p></li>
+<li><p>or git clone <a href="https://github.com/tiotags1/hin9.git">the git repo</a> <code>git clone https://github.com/tiotags1/hin9.git &amp;&amp; cd hin9</code></p></li>
+<li><p>compile and run
+<code>mkdir -p build &amp;&amp; cd build &amp;&amp; cmake .. &amp;&amp; make &amp;&amp; cd .. &amp;&amp; build/hin9</code></p></li>
 </ul>
 
 <h2>Running</h2>
@@ -45,6 +49,7 @@
 <ul>
 <li>openrc: <code>/etc/init.d/hinsightd start</code></li>
 <li>systemd: <code>systemctl start hinsightd.service</code></li>
+<li>without an init system: <a href="docs/run.html">instructions</a></li>
 </ul>
 
 </div>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
  <loc>https://tiotags1.github.io/tiotags1/about.html</loc>
- <lastmod>2022-02-15T09:24:59.897705+00:00</lastmod>
+ <lastmod>2022-04-25T14:46:19.216123+00:00</lastmod>
 </url>
 <url>
  <loc>https://tiotags1.github.io/tiotags1/blog/archive.html</loc>
@@ -32,15 +32,23 @@
  <lastmod>2022-02-24T16:11:49.287771+00:00</lastmod>
 </url>
 <url>
+ <loc>https://tiotags1.github.io/tiotags1/docs/run.html</loc>
+ <lastmod>2022-04-25T10:17:46.176351+00:00</lastmod>
+</url>
+<url>
  <loc>https://tiotags1.github.io/tiotags1/download.html</loc>
- <lastmod>2022-01-28T18:47:47.104854+00:00</lastmod>
+ <lastmod>2022-04-25T14:55:54.897154+00:00</lastmod>
 </url>
 <url>
  <loc>https://tiotags1.github.io/tiotags1/help.html</loc>
  <lastmod>2022-02-18T11:35:52.061979+00:00</lastmod>
 </url>
 <url>
+ <loc>https://tiotags1.github.io/tiotags1/hinsightd.html</loc>
+ <lastmod>2022-04-25T14:46:40.523124+00:00</lastmod>
+</url>
+<url>
  <loc>https://tiotags1.github.io/tiotags1/index.html</loc>
- <lastmod>2022-02-18T15:58:08.079176+00:00</lastmod>
+ <lastmod>2022-04-25T14:39:44.702102+00:00</lastmod>
 </url>
 </urlset>
