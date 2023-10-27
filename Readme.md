@@ -1,3 +1,3 @@
 
-personal site at (https://tiotags1.github.io/tiotags1/)
+personal site at [https://tiotags.gitlab.io](https://tiotags.gitlab.io/)
 
